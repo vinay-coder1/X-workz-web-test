@@ -15348,16 +15348,16 @@ function checkEmailNSendMailForReferal(e, t, a, n, i, o, s, r, l, d, c, p, u) {
 class SendContactEmail {
     send(e, t, a = "xworkzcontact@gmail.com", n = `from ${t} Subscribe`, i = "Contact") {
         Email.send(t, a, n, i, {
-            token: "433b9b-2f6f-4015-be07-d11bc09d7cfd",
+            token: "47bccf2b-9914-4560-b62e-2db77ce58f06",
             callback: e
         })
     }
 }
 
 class SendEmail {
-    send(e, t, a = "xworkzsubscribe@gmail.com", n = `from ${t} Subscribe`, i = "Subscribe") {
+    send(e, t, a = "xworkzcontact@gmail.com", n = `from ${t} Subscribe`, i = "Subscribe") {
         Email.send(t, a, n, i, {
-            token: "4699205c-db5f-4041-9e91-1beba28d97ec",
+            token: "47bccf2b-9914-4560-b62e-2db77ce58f06",
             callback: e
         })
     }
