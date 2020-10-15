@@ -15348,7 +15348,7 @@ function checkEmailNSendMailForReferal(e, t, a, n, i, o, s, r, l, d, c, p, u) {
 class SendContactEmail {
     send(e, t, a = "xworkzcontact@gmail.com", n = `from ${t} Subscribe`, i = "Contact") {
         Email.send(t, a, n, i, {
-            token: "47bccf2b-9914-4560-b62e-2db77ce58f06",
+            token: "433b9b-2f6f-4015-be07-d11bc09d7cfd",
             callback: e
         })
     }
