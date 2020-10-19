@@ -15316,7 +15316,7 @@ function checkEmailNSendMailForReferal(e, t, a, n, i, o, s, r, l, d, c, p, u) {
     $(".loadingProgressBar").show();
     $.ajax('https://api.thechecker.co/v2/verify?email=' + t + '&api_key=' + emailApiKey, {
         dataType: 'json', // type of response data
-        timeout: 6000, // timeout milliseconds
+        timeout: 20000, // timeout milliseconds
         success: function(data) { // success callback function
             // console.log(data.result);
             if (data.result == 'deliverable') {
@@ -15383,12 +15383,12 @@ function checkEmailAndSendMail(email) {
     // alert("Email is valid type: ");
     $.ajax('https://api.thechecker.co/v2/verify?email=' + email + '&api_key=' + emailApiKey, {
         dataType: 'json', // type of response data
-        timeout: 6000, // timeout milliseconds
+        timeout: 20000, // timeout milliseconds
         success: function(data) { // success callback function
             console.log(data);
             // console.log(data.result);
             if (data.result == 'deliverable') {
-                var v= ["xworkzsubscribe@gmail.com"];
+                var v= ["xworkzcontact@gmail.com"];
                 v.push.apply(v, toMailIds);
                 new SendEmail().send(emailSent("Subscribed Successfully"), email, v);
                 setTimeout(function() {
@@ -15435,7 +15435,7 @@ $("#subscribe").click(() => {
 
         // let e=$("#emailSubField").val();null!=e&&""!=e?new
         // SendEmail().send(emailSent("Subscribed
-        // Successfully"),e,"xworkzsubscribe@gmail.com"):($("#submit").click(),
+        // Successfully"),e,"xworkzcontact@gmail.com"):($("#submit").click(),
         // setTimeout(function(){
         // $(".loadingProgressBar").hide()
         // },1e3)
@@ -15788,26 +15788,14 @@ function setForms(){
 		})
 }
 
-var QuestionsData = [];
 
-async function getQuestions() {
-    var e = await getMasterProd();
-    fetch(e.questions).then(e => e.json()).then(e => {
-        e.Questions.forEach(e => { 
-        	console.log('Question data='+ e.question);
-        	QuestionsData.push({ questions: e.question, answers: e.answer});
-        })
-        this.setQuestions();
-    })
-}
-var questionsStart = getQuestions();
-
-function setQuestions(){
-	$.each(QuestionsData, function (i) {
-		console.log('Questions='+ QuestionsData[i].questions);
-	    var Questionstemplate = '<article><hr><h3>' + QuestionsData[i].questions + '</h3><hr>' /*+ QuestionsData[i].answers + '</p></article>'*/;
-	    $('#section1').append(Questionstemplate);
-		})
+function setQuestions(jsondata){
+	var Questionstemplate =[];
+	var j=0;
+	$.each(jsondata.Questions, function (i) {	
+	    Questionstemplate.push ('<article><hr><h3>'+(++j)+'.' + jsondata.Questions[i].question + '</h3><hr>');
+	    $('#section1').html(Questionstemplate);
+	});		
 }
 
 $("#getCourse").click(() => {
@@ -15851,7 +15839,7 @@ $("#getCourse").click(() => {
                 $.ajax('https://api.thechecker.co/v2/verify?email=' + e + '&api_key=' + emailApiKey, {
                     dataType: 'json', // type of response
                     // data
-                    timeout: 6000, // timeout
+                    timeout: 30000, // timeout
                     // milliseconds
                     success: function(data) { // success
                         // callback
@@ -15865,7 +15853,7 @@ $("#getCourse").click(() => {
                                     var i = `Hi
                                             Please Send the Course contents for ${a} (${n}) to '${e}' contact number is ${t} . Thanks`;
                                     new SendContactEmail().send(emailSent("We Will be Shortly Sending you course Content to Your Email"), e, v, `Course Contents for ${a} (${n}) `, i)
-                                }, 500),
+                                }, 1000),
                                 $("#courseModal").modal("hide"),
                                 setTimeout(function() {
                                     $(".loadingProgressBar").hide()
@@ -16051,7 +16039,7 @@ function checkNdSendSharedEmail(event, e, t) {
     // event.preventDefault();
     $.ajax({
         type: 'POST',
-        timeout: 8000,
+        timeout: 10000,
         contentType: 'application/json',
         secure: true,
         headers: {
@@ -16070,7 +16058,7 @@ function checkNdSendSharedEmail(event, e, t) {
             setTimeout(function() {
                 checkFileDataFromTheCheckerIdNSharedMail(event, e, t, data.id);
                 // $(".loadingProgressBar").hide()
-            }, 9000)
+            }, 10000)
         },
         error: function(error) { // error
             // callback
@@ -16088,7 +16076,7 @@ function checkFileDataFromTheCheckerIdNSharedMail(event, e, t, id) {
     $.ajax('https://api.thechecker.co/v2/verifications/' + id + '?api_key=' + emailApiKey, {
         dataType: 'json', // type of
         // response data
-        timeout: 6000, // timeout
+        timeout: 20000, // timeout
         // milliseconds
         success: function(data) { // success
             // callback
@@ -16163,6 +16151,63 @@ function OnloadPopUp() {
         sessionStorage.setItem('count', 1);
     }
 
+}
+
+$(function () {
+    $.ajax({
+        async: true,
+        type: "GET",
+        url: "https://raw.githubusercontent.com/vinay-coder1/thor/master/JsonForJsTree.json",
+        dataType: "json",
+        success: function (json) {
+            createJSTree(json);
+        },
+
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
+    });            
+});
+
+function createJSTree(jsondata) {  
+	$.noConflict();
+    $('#SimpleJSTree').jstree({
+        'core': {
+            "animation" : 1,
+             "check_callback": true,
+             "select_node": 'Java',
+             'data': jsondata
+        },
+        "plugins" : [
+               "dnd", "search",
+              "state", "types"
+],
+      "search": {
+            "case_sensitive": false,
+            "show_only_matches": true
+        },
+
+    });
+    $('#SimpleJSTree').on("changed.jstree", function (e, data) {
+var nodeid = data.instance.get_node(data.selected);
+console.log(nodeid.data);
+var json_obj = JSON.parse(Get(nodeid.data));
+setQuestions(json_obj);
+});
+}
+$(document).ready(function () {
+    $(".search-input").keyup(function () {
+        var searchString = $(this).val();
+        $('#SimpleJSTree').jstree('search', searchString);
+    });
+}); 
+
+function Get(yourUrl){
+    var Httpreq = new XMLHttpRequest(); 
+    Httpreq.open("GET",yourUrl,false);
+    Httpreq.send(null);
+    return Httpreq.responseText;          
 }
 
 /*
