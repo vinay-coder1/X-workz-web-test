@@ -15888,6 +15888,7 @@ background-color: #F5F5F5;
 border-radius: 10px; }
 
 .scrollbar-ripe-malinka::-webkit-scrollbar {
+height:12px; 
 width: 12px;
 background-color: #F5F5F5; }
 
