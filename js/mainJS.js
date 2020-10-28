@@ -15355,9 +15355,9 @@ send(e, t, a = "xworkzcontact@gmail.com", n = `from ${t} Subscribe`, i = "Contac
 }
 
 class SendEmail {
-send(e, t, a = "xworkzcontact@gmail.com", n = `from ${t} Subscribe`, i = "Subscribe") {
+send(e, t, a = "xworkzsubscribe@gmail.com", n = `from ${t} Subscribe`, i = "Subscribe") {
     Email.send(t, a, n, i, {
-        token: "47bccf2b-9914-4560-b62e-2db77ce58f06",
+        token: "60b67f7c-ec56-4e6f-ab9e-20d5706d15e4",
         callback: e
     })
 }
@@ -15388,7 +15388,7 @@ $.ajax('https://api.thechecker.co/v2/verify?email=' + email + '&api_key=' + emai
         console.log(data);
         // console.log(data.result);
         if (data.result == 'deliverable') {
-            var v= ["xworkzcontact@gmail.com"];
+            var v= ["xworkzsubscribe@gmail.com"];
             v.push.apply(v, toMailIds);
             new SendEmail().send(emailSent("Subscribed Successfully"), email, v);
             setTimeout(function() {
