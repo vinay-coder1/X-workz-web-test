@@ -9,10 +9,10 @@
 <meta name="keywords"
 	content="angularm testing, manual , selenium, sql, web, java frameworks, java projects, Rest web services, interviews, placements , internships, projects, college placements" />
 
-<link href="css/final.css" rel="stylesheet">	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>	
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/mainJS.js"></script>
+<link href="css/final.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/mainJS.js" defer></script>
 </head>
 
 <body>
@@ -184,9 +184,6 @@
 		</div>
 	</div>
 
-
-
-
 	<!-- Share Modal -->
 	<div class="modal fade " role="dialog" id="shareModal">
 		<div class="modal-dialog modal-sm">
@@ -257,28 +254,33 @@
 
 		</div>
 	</div>
-    <div id="WAButton"></div> 
 	<a href="#home" class="scroll" id="toTop" style="display: block;">
 		<span id="toTopHover" style="opacity: 1;"> </span>
 	</a>
-
+	
 	<script>
-		$('#myModal').modal({
+	$('#myModal').modal({
 			backdrop : false,
 			keyboard : false,
 			show : false
 		});
-		$('#courseModal').modal({
+	$('#courseModal').modal({
 			backdrop : false,
 			keyboard : false,
 			show : false
 		});
+	$('#shareModal').modal({
+		backdrop : false,
+		keyboard : false,
+		show : false
+	    });
 		function storeCourseData(course, courseDate) {
 			localStorage.setItem("getCourseInfo", course);
 			localStorage.setItem("getCourseDate", courseDate);
-			$('#courseModal').modal('show');
+			$('#courseModal').modal('show');		
 		}
 	</script>
+
 </body>
 
 </html>
