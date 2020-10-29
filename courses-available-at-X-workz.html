@@ -11,9 +11,8 @@
 
 <link href="css/final.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/mainJS.js" defer></script>
-
 </head>
 
 <body>
@@ -193,7 +192,7 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h5 class="modal-title" style="padding: 0px;">Share Course</h5>
 				</div>
-				<div class="modal-body" style="padding-top: 0px;padding-right: 0px !important;">
+				<div class="modal-body" style="padding-top: 0px;">
 					<div>
 						<form action="#" method="post">
 							<div align="center" style="margin-top: 5%">
@@ -270,12 +269,18 @@
 			keyboard : false,
 			show : false
 		});
+	$('#shareModal').modal({
+		backdrop : false,
+		keyboard : false,
+		show : false
+	    });
 		function storeCourseData(course, courseDate) {
 			localStorage.setItem("getCourseInfo", course);
 			localStorage.setItem("getCourseDate", courseDate);
 			$('#courseModal').modal('show');		
 		}
 	</script>
+
 </body>
 
 </html>
