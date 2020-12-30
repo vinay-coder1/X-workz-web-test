@@ -88,10 +88,14 @@ JSF Angular JS Angular 6  HTML CSS JavaScript Node JS Build Tools Cloud Architec
 								id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav navbar-right">
 								     <li><a href="Reviews-X-workz-google-reviews.html">Reviews</a></li>
-									 <li><a href="index.html">Home</a></li>
+									<li><a href=" X-workz-java-testing-development-software-training-center.html">Home</a></li>
 									<li><a href="about-X-workz-trainers-courses.html">About</a></li>
 									<li><a href="courses-available-at-X-workz.html">Courses</a></li>
-									<li><a class="active" href="contact-X-workz-address-location.html">Contact</a></li>
+									<li><a class="active" data-toggle="dropdown"  aria-hidden="true" style="font-family: 'Sans-serif Helvetica';">Locations </a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="contact-X-workz-address-location-rajajinagar.html">RajajiNagar</a>
+								 		<a class="dropdown-item" href="contact-X-workz-address-location-BTM.html">BTM Layout</a>
+									</div></li>
 									<li><a href="X-workz-gallery-placements-photos.html">Gallery</a></li>
 									<li><a href="Placed-trainees-from-X-workz.html">Placements</a></li>
 									<li><a href="referral-X-workz-companies-emailId.html">Referral</a></li>
@@ -114,42 +118,14 @@ JSF Angular JS Angular 6  HTML CSS JavaScript Node JS Build Tools Cloud Architec
 			<div class="contact-maps">
 				<h5 class="main-w3l-title" style="margin-bottom: 0.5em;">Find us on the map</h5>
 				
-				<div id="horizontalTab">
-					<div class="resp-tabs-container">
-						<div class="tab1">
-							<div class="col-md-5 add-left">
-								<p class="paragraph-agileinfo">
-									<span>Location : </span>Basement, No. 17/10/28, Dr Rajkumar Rd,
-									3rd Stage 4th Block, Prakash Nagar, Rajaji Nagar, Bengaluru,
-									Karnataka 560021
-								</p>
-								<p class="paragraph-agileinfo">
-									<span>Call Us : </span><b>+91-9886971480/9886971483</b> <br />
-									<b>+91-8048669257</b>
-								</p>
-								<p class="paragraph-agileinfo">
-									<span>Email : </span><a href="mailto:contact@x-workz.in"><b>contact@x-workz.in</b></a>
-								</p>
-							</div>
-							<div class="col-md-7 add-right">
-							<div class=iframe-container>
-								<iframe
-									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.662510216746!2d77.5540680139714!3d12.993424617916697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d92e03a00dd%3A0x8b96f625cf9b4ead!2sX-Workz!5e0!3m2!1sen!2sin!4v1601532336527!5m2!1sen!2sin"
-									width="600" height="450 " frameborder="0 " style="border: 0"
-									allowfullscreen></iframe>
-									</div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
+				
 				<br><br><br>
 				<div id="horizontalTab">
 					<div class="resp-tabs-container">
 						<div class="tab1">
 							<div class="col-md-5 add-left">
 								<p class="paragraph-agileinfo">
-									<span>Location : </span>1st B Main Rd, Mico Layout, Stage 2, BTM 2nd Stage, Bengaluru, Karnataka 560076
+									<span>Location : </span>1st Floor, Chinnappa's Park View, Outer Ring Rd, Mico Layout, JCO Colony, BTM 2nd Stage, Bengaluru, Karnataka 560076
 								</p>
 								<p class="paragraph-agileinfo">
 									<span>Call Us : </span><b>+91-9886971480/9886971483</b> <br />
@@ -162,7 +138,7 @@ JSF Angular JS Angular 6  HTML CSS JavaScript Node JS Build Tools Cloud Architec
 							<div class="col-md-7 add-right">
 							<div class=iframe-container>
 								<iframe
-									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243.05397278706192!2d77.60276517394728!3d12.916489310459536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1503e38cc81f%3A0xb1c6c62542c3b68d!2s1st%20B%20Main%20Rd%2C%20Mico%20Layout%2C%20Stage%202%2C%20BTM%202nd%20Stage%2C%20Bengaluru%2C%20Karnataka%20560076!5e0!3m2!1sen!2sin!4v1602083654155!5m2!1sen!2sin"
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2311.5134504058233!2d77.625852300682!3d13.004645768977108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae173f9c90e3ed%3A0xaddec3bf0d5d8ffd!2sX-workZ!5e0!3m2!1sen!2sin!4v1608123377837!5m2!1sen!2sin"
 									width="600" height="450 " frameborder="0 " style="border: 0"
 									allowfullscreen></iframe>
 							</div>
@@ -242,7 +218,31 @@ JSF Angular JS Angular 6  HTML CSS JavaScript Node JS Build Tools Cloud Architec
 			<p>&copy; 2019 X-Workz . All Rights Reserved</p>
 		</div>
 	</div>
-     <div id="WAButton"></div> 
+     <div id="WAButton"></div>
+     <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v9.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=install_email
+        page_id="106193078063185"
+  theme_color="#7646ff">
+      </div> 
 	<a href="#home" class="scroll" id="toTop" style="display: block;">
 		<span id="toTopHover" style="opacity: 1;"> </span>
 	</a>

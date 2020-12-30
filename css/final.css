@@ -1,12 +1,11 @@
 html {
-	
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%
 	padding-right:0px !important;
-        margin-right:0px !important;
-        padding-left: 0px !important;
-       margin-left: 0px !important;
+    margin-right:0px !important;
+    padding-left: 0px !important;
+    margin-left: 0px !important;
 }
 
 body {
