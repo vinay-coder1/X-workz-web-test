@@ -15398,7 +15398,7 @@ $.ajax('https://api.thechecker.co/v2/verify?email=' + email + '&api_key=' + emai
         console.log(data.result);
         if (data.result == 'deliverable') {
             var v= ["xworkzsubscribe@gmail.com"];
-            v.push.apply(v, toMailIds); important
+            v.push.apply(v, toMailIds);
             new SendEmail().send(emailSent("Subscribed Successfully"), email, v);
             setTimeout(function() {
                 $(".loadingProgressBar").hide()
@@ -15415,7 +15415,7 @@ $.ajax('https://api.thechecker.co/v2/verify?email=' + email + '&api_key=' + emai
         console.log(error);
         console.log(error.responseText);
         var v= ["xworkzsubscribe@gmail.com"];
-         v.push.apply(v, toMailIds); important
+         v.push.apply(v, toMailIds);
         new SendEmail().send(emailSent("Subscribed Successfully"), email, v);
         setTimeout(function() {
             $(".loadingProgressBar").hide()
@@ -15874,7 +15874,7 @@ $("#getCourseContent").click(() => {
                     if (data.result == 'deliverable') {
                         setTimeout(() => {                          
                                 var v= ["xworkzcontact@gmail.com"];
-                                v.push.apply(v, toMailIds); important
+                                v.push.apply(v, toMailIds);
                                 var i = `Hi
                                         Please Send the Course contents for ${a} (${n}) to '${e}' contact number is ${t} . Thanks`;
                                 new SendContactEmail().send(emailSent("We Will be Shortly Sending you course Content to Your Email"), e, v, `Course Contents for ${a} (${n}) `, i)
@@ -15897,7 +15897,7 @@ $("#getCourseContent").click(() => {
                     console.log(error.responseText);
                     setTimeout(() => {                          
                         var v= ["xworkzcontact@gmail.com"];
-                        v.push.apply(v, toMailIds); important
+                        v.push.apply(v, toMailIds);
                         var i = `Hi
                                 Please Send the Course contents for ${a} (${n}) to '${e}' contact number is ${t} . Thanks`;
                         new SendContactEmail().send(emailSent("We Will be Shortly Sending you course Content to Your Email"), e, v, `Course Contents for ${a} (${n}) `, i)
