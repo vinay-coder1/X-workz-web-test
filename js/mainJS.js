@@ -15870,7 +15870,7 @@ $("#getCourseContent").click(() => {
                     // callback
                     // function
                     console.log(data);
-                    // console.log(data.result);
+                    console.log(data.result);
                     if (data.result == 'deliverable') {
                         setTimeout(() => {                          
                                 var v= ["xworkzcontact@gmail.com"];
